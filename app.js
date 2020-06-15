@@ -3,6 +3,7 @@ const url = `https://digimon-api.herokuapp.com/api/digimon`;
 const rookieBtn = document.querySelector('.rookie');
 const championBtn = document.querySelector('.champion');
 const ultimateBtn = document.querySelector('.ultimate');
+const megaBtn = document.querySelector('.mega');
 
 const fetchDigimon = async () => {
 	try {
@@ -23,13 +24,12 @@ const generateHTML = (digimon) => {
 		.map(
 			(digi) =>
 				`
-		<div class="card">
-            <img class="card-img" src="${digi.img}" />
-            <h2 class="card-title">${digi.name}</h2>
-            <p class="card-subtitle">${digi.level}</p>
+			<div class="card">
+				<img class="card-img" src="${digi.img}" />
+				<h2 class="card-title">${digi.name}</h2>
+				<p class="card-subtitle">I am a ${digi.level}</p>
             </div>
-            
-		`
+			`
 		)
 		.join(' ');
 };
@@ -45,15 +45,12 @@ const displayDigimon = (digimon) => {
 	const rookie = filterLevel(digimon, 'Rookie');
 	const champion = filterLevel(digimon, 'Champion');
 	const ultimate = filterLevel(digimon, 'Ultimate');
-
-	// rookieBtn.addEventListener('click', () => {
-	// 	digimonContainer.innerHTML = generateHTML(rookie);
-	// 	// console.log(generateHTML(rookie));
-	// });
+	const mega = filterLevel(digimon, 'Mega');
 
 	displayFilteredResults(rookieBtn, rookie);
 	displayFilteredResults(championBtn, champion);
 	displayFilteredResults(ultimateBtn, ultimate);
+	displayFilteredResults(megaBtn, mega);
 };
 
 fetchDigimon();
