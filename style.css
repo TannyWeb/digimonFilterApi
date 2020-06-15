@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Balsamiq Sans', cursive;
+}
+
+.digimon-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	padding-inline-start: 0;
+	grid-gap: 20px;
+}
+
+.container {
+	padding: 20px;
+	background: aquamarine;
+}
+
+.card {
+	list-style: none;
+	padding: 40px;
+	background-color: #fff;
+	color: #222;
+	text-align: center;
+	cursor: pointer;
+}
+
+.card-subtitle {
+	margin-top: 15px;
+}
+
+.levels {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	text-align: center;
+	margin-top: 30px;
+}
+
+.levels > div {
+	width: 75%;
+	margin: 0 auto 20px auto;
+	padding: 10px;
+	color: #fff;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.rookie {
+	background-color: green;
+}
+.champion {
+	background: orange;
+}
+.ultimate {
+	background: red;
+}
